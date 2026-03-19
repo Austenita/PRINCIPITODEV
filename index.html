@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>El Principito ✨</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Poppins:wght@300;500&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(to bottom, #0f2027, #203a43, #2c5364);
+      color: white;
+      overflow-x: hidden;
+    }
+
+    header {
+      height: 100vh;
+      background: url('https://images.unsplash.com/photo-1501785888041-af3ef285b470') center/cover;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+
+    header h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 4rem;
+      background: rgba(0,0,0,0.5);
+      padding: 20px 40px;
+      border-radius: 20px;
+      animation: fadeIn 2s ease;
+    }
+
+    section {
+      padding: 60px 20px;
+      text-align: center;
+    }
+
+    .card-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+      margin-top: 40px;
+    }
+
+    .card {
+      width: 300px;
+      background: rgba(255,255,255,0.1);
+      backdrop-filter: blur(10px);
+      border-radius: 20px;
+      overflow: hidden;
+      transition: transform 0.4s, box-shadow 0.4s;
+    }
+
+    .card:hover {
+      transform: translateY(-10px) scale(1.05);
+      box-shadow: 0 10px 30px rgba(255,255,255,0.3);
+    }
+
+    .card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .card h3 {
+      margin: 15px 0;
+      color: #ffd700;
+    }
+
+    .card p {
+      padding: 0 15px 20px;
+      font-size: 0.9rem;
+      opacity: 0.8;
+    }
+
+    footer {
+      padding: 20px;
+      text-align: center;
+      background: rgba(0,0,0,0.5);
+    }
+
+    /* Estrellas animadas */
+    .stars {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+    }
+
+    .star {
+      position: absolute;
+      width: 2px;
+      height: 2px;
+      background: white;
+      animation: twinkle 2s infinite ease-in-out;
+    }
+
+    @keyframes twinkle {
+      0%, 100% { opacity: 0.2; }
+      50% { opacity: 1; }
+    }
+
+    @keyframes fadeIn {
+      from {opacity: 0; transform: translateY(20px);}
+      to {opacity: 1; transform: translateY(0);}
+    }
+
+    .quote {
+      font-size: 1.5rem;
+      font-style: italic;
+      color: #ffd700;
+      margin-top: 20px;
+      animation: fadeIn 3s ease;
+    }
+
+  </style>
+</head>
+<body>
+
+<div class="stars" id="stars"></div>
+
+<header>
+  <h1>El Principito 🌟</h1>
+</header>
+
+<section>
+  <h2>Un viaje entre estrellas ✨</h2>
+  <p class="quote">"Lo esencial es invisible a los ojos"</p>
+</section>
+
+<section>
+  <h2>Personajes</h2>
+
+  <div class="card-container">
+
+    <div class="card">
+      <img src="https://upload.wikimedia.org/wikipedia/en/0/05/Littleprince.JPG">
+      <h3>El Principito</h3>
+      <p>Un niño curioso que viaja entre planetas buscando comprender el mundo.</p>
+    </div>
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1519681393784-d120267933ba">
+      <h3>La Rosa 🌹</h3>
+      <p>Delicada y orgullosa, representa el amor y la responsabilidad.</p>
+    </div>
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee">
+      <h3>El Zorro 🦊</h3>
+      <p>Enseña el valor de la amistad y los lazos que creamos.</p>
+    </div>
+
+  </div>
+</section>
+
+<section>
+  <h2>Mensaje</h2>
+  <p style="max-width: 600px; margin: auto; opacity:0.8;">
+    El Principito nos recuerda la importancia de ver con el corazón, de valorar lo simple y de cuidar aquello que amamos.
+  </p>
+</section>
+
+<footer>
+  <p>✨ Inspirado en la obra de Antoine de Saint-Exupéry ✨</p>
+</footer>
+
+<script>
+  // Generar estrellas dinámicas
+  const starsContainer = document.getElementById("stars");
+
+  for (let i = 0; i < 150; i++) {
+    const star = document.createElement("div");
+    star.classList.add("star");
+
+    star.style.top = Math.random() * 100 + "vh";
+    star.style.left = Math.random() * 100 + "vw";
+    star.style.animationDuration = (Math.random() * 2 + 1) + "s";
+
+    starsContainer.appendChild(star);
+  }
+</script>
+
+</body>
+</html>
