@@ -1,192 +1,254 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <title>El Principito ✨</title>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Poppins:wght@300;500&display=swap" rel="stylesheet">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aranza Rodríguez | Ingeniera Química Metalúrgica</title>
 
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
 
-    body {
-      font-family: 'Poppins', sans-serif;
-      background: linear-gradient(to bottom, #0f2027, #203a43, #2c5364);
-      color: white;
-      overflow-x: hidden;
-    }
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
 
-    header {
-      height: 100vh;
-      background: url('https://images.unsplash.com/photo-1501785888041-af3ef285b470') center/cover;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-    }
+body {
+  background: #0f172a;
+  color: white;
+  overflow-x: hidden;
+}
 
-    header h1 {
-      font-family: 'Playfair Display', serif;
-      font-size: 4rem;
-      background: rgba(0,0,0,0.5);
-      padding: 20px 40px;
-      border-radius: 20px;
-      animation: fadeIn 2s ease;
-    }
+/* HERO */
+.hero {
+  height: 100vh;
+  background: linear-gradient(120deg, #1e293b, #0f172a);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 20px;
+}
 
-    section {
-      padding: 60px 20px;
-      text-align: center;
-    }
+.hero h1 {
+  font-size: 3rem;
+  font-weight: 800;
+}
 
-    .card-container {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 30px;
-      margin-top: 40px;
-    }
+.hero p {
+  margin-top: 15px;
+  font-size: 1.2rem;
+  color: #94a3b8;
+}
 
-    .card {
-      width: 300px;
-      background: rgba(255,255,255,0.1);
-      backdrop-filter: blur(10px);
-      border-radius: 20px;
-      overflow: hidden;
-      transition: transform 0.4s, box-shadow 0.4s;
-    }
+.btn {
+  margin-top: 25px;
+  padding: 12px 25px;
+  border: none;
+  background: #22c55e;
+  color: white;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: 0.3s;
+}
 
-    .card:hover {
-      transform: translateY(-10px) scale(1.05);
-      box-shadow: 0 10px 30px rgba(255,255,255,0.3);
-    }
+.btn:hover {
+  background: #16a34a;
+}
 
-    .card img {
-      width: 100%;
-      height: 200px;
-      object-fit: cover;
-    }
+/* SECTION */
+.section {
+  padding: 60px 10%;
+}
 
-    .card h3 {
-      margin: 15px 0;
-      color: #ffd700;
-    }
+.section h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #22c55e;
+}
 
-    .card p {
-      padding: 0 15px 20px;
-      font-size: 0.9rem;
-      opacity: 0.8;
-    }
+/* CARDS */
+.card {
+  background: #1e293b;
+  padding: 20px;
+  border-radius: 15px;
+  margin-bottom: 20px;
+  transition: 0.3s;
+}
 
-    footer {
-      padding: 20px;
-      text-align: center;
-      background: rgba(0,0,0,0.5);
-    }
+.card:hover {
+  transform: translateY(-5px);
+  background: #334155;
+}
 
-    /* Estrellas animadas */
-    .stars {
-      position: fixed;
-      width: 100%;
-      height: 100%;
-      z-index: -1;
-    }
+/* GRID */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+  gap: 20px;
+}
 
-    .star {
-      position: absolute;
-      width: 2px;
-      height: 2px;
-      background: white;
-      animation: twinkle 2s infinite ease-in-out;
-    }
+/* SKILLS */
+.skill {
+  background: #334155;
+  padding: 10px;
+  border-radius: 10px;
+  text-align: center;
+}
 
-    @keyframes twinkle {
-      0%, 100% { opacity: 0.2; }
-      50% { opacity: 1; }
-    }
+/* FOOTER */
+footer {
+  text-align: center;
+  padding: 20px;
+  background: #020617;
+  color: #94a3b8;
+}
 
-    @keyframes fadeIn {
-      from {opacity: 0; transform: translateY(20px);}
-      to {opacity: 1; transform: translateY(0);}
-    }
+/* ANIMACIONES */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.8s ease;
+}
 
-    .quote {
-      font-size: 1.5rem;
-      font-style: italic;
-      color: #ffd700;
-      margin-top: 20px;
-      animation: fadeIn 3s ease;
-    }
-
-  </style>
+.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+</style>
 </head>
+
 <body>
 
-<div class="stars" id="stars"></div>
-
-<header>
-  <h1>El Principito 🌟</h1>
-</header>
-
-<section>
-  <h2>Un viaje entre estrellas ✨</h2>
-  <p class="quote">"Lo esencial es invisible a los ojos"</p>
-</section>
-
-<section>
-  <h2>Personajes</h2>
-
-  <div class="card-container">
-
-    <div class="card">
-      <img src="https://upload.wikimedia.org/wikipedia/en/0/05/Littleprince.JPG">
-      <h3>El Principito</h3>
-      <p>Un niño curioso que viaja entre planetas buscando comprender el mundo.</p>
-    </div>
-
-    <div class="card">
-      <img src="https://images.unsplash.com/photo-1519681393784-d120267933ba">
-      <h3>La Rosa 🌹</h3>
-      <p>Delicada y orgullosa, representa el amor y la responsabilidad.</p>
-    </div>
-
-    <div class="card">
-      <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee">
-      <h3>El Zorro 🦊</h3>
-      <p>Enseña el valor de la amistad y los lazos que creamos.</p>
-    </div>
-
+<!-- HERO -->
+<section class="hero">
+  <div>
+    <h1>Aranza Y. Rodríguez Muñiz</h1>
+    <p>Ingeniera Químico-Metalúrgica | Optimización de procesos mineros</p>
+    <button class="btn" onclick="scrollToSection('about')">Conóceme</button>
   </div>
 </section>
 
-<section>
-  <h2>Mensaje</h2>
-  <p style="max-width: 600px; margin: auto; opacity:0.8;">
-    El Principito nos recuerda la importancia de ver con el corazón, de valorar lo simple y de cuidar aquello que amamos.
+<!-- ABOUT -->
+<section id="about" class="section fade-in">
+  <h2>Sobre mí</h2>
+  <p>
+    Ingeniera Químico-Metalúrgica con experiencia en procesamiento de minerales,
+    análisis de datos y optimización de procesos en planta concentradora.
+    Especializada en lixiviación, flotación y control de variables operativas.
   </p>
 </section>
 
+<!-- EXPERIENCE -->
+<section class="section fade-in">
+  <h2>Experiencia Profesional</h2>
+
+  <div class="card">
+    <h3>Químico Analista de Muestreo</h3>
+    <p><strong>Grupo México / Newmont (2024–2025)</strong></p>
+    <p>
+      Monitoreo de condiciones operativas, análisis ambiental y evaluación de exposición química.
+      Interpretación de datos para asegurar seguridad y eficiencia en procesos metalúrgicos.
+    </p>
+  </div>
+
+  <div class="card">
+    <h3>Técnica en Investigación - Litio</h3>
+    <p><strong>Instituto de Geofísica (2023–2024)</strong></p>
+    <p>
+      Desarrollo de procesos de lixiviación, análisis cinético y optimización de recuperación de litio.
+    </p>
+  </div>
+
+  <div class="card">
+    <h3>Técnica en Investigación - Cobre</h3>
+    <p><strong>Instituto de Geología (2022–2023)</strong></p>
+    <p>
+      Modelado matemático de lixiviación con Runge-Kutta y optimización de variables operativas.
+    </p>
+  </div>
+
+</section>
+
+<!-- EDUCATION -->
+<section class="section fade-in">
+  <h2>Educación</h2>
+
+  <div class="grid">
+    <div class="card">
+      <h3>UNAM</h3>
+      <p>Ingeniería Química Metalúrgica</p>
+      <p>Becaria STEM</p>
+    </div>
+
+    <div class="card">
+      <h3>IPN</h3>
+      <p>Técnico en Construcción y Topografía</p>
+    </div>
+  </div>
+
+</section>
+
+<!-- SKILLS -->
+<section class="section fade-in">
+  <h2>Habilidades</h2>
+
+  <div class="grid">
+    <div class="skill">Lixiviación</div>
+    <div class="skill">Flotación Cu-Mo</div>
+    <div class="skill">Balance Metalúrgico</div>
+    <div class="skill">Control de pH</div>
+    <div class="skill">Optimización de procesos</div>
+    <div class="skill">Análisis estadístico</div>
+  </div>
+
+</section>
+
+<!-- LANGUAGES -->
+<section class="section fade-in">
+  <h2>Idiomas & Logros</h2>
+
+  <div class="card">
+    <p>🇲🇽 Español (nativo)</p>
+    <p>🇺🇸 Inglés (fluido)</p>
+    <p>🇩🇪 Alemán (lectura/escritura)</p>
+    <p>🇨🇳 Chino (básico)</p>
+    <br>
+    <p>🏆 3er lugar WOMENCISO 2025</p>
+  </div>
+
+</section>
+
+<!-- CONTACT -->
+<section class="section fade-in">
+  <h2>Contacto</h2>
+  <p>📧 aranzaymuniz@gmail.com</p>
+  <p>📱 +52 55 5419 1476</p>
+  <p>📍 Ciudad de México</p>
+</section>
+
 <footer>
-  <p>✨ Inspirado en la obra de Antoine de Saint-Exupéry ✨</p>
+  © 2026 Aranza Rodríguez | Portafolio Profesional
 </footer>
 
 <script>
-  // Generar estrellas dinámicas
-  const starsContainer = document.getElementById("stars");
+function scrollToSection(id) {
+  document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
+}
 
-  for (let i = 0; i < 150; i++) {
-    const star = document.createElement("div");
-    star.classList.add("star");
+// ANIMACIÓN SCROLL
+const elements = document.querySelectorAll('.fade-in');
 
-    star.style.top = Math.random() * 100 + "vh";
-    star.style.left = Math.random() * 100 + "vw";
-    star.style.animationDuration = (Math.random() * 2 + 1) + "s";
-
-    starsContainer.appendChild(star);
-  }
+window.addEventListener('scroll', () => {
+  elements.forEach(el => {
+    const rect = el.getBoundingClientRect();
+    if(rect.top < window.innerHeight - 100){
+      el.classList.add('show');
+    }
+  });
+});
 </script>
 
 </body>
